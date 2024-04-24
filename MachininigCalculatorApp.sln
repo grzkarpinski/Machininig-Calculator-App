@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachininigCalculatorUI", "MachininigCalculatorUI\MachininigCalculatorUI.csproj", "{A5BB050B-9AAC-4D1C-926F-44212CCB65ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachininigCalculatorLibary", "MachininigCalculatorLibary\MachininigCalculatorLibary.csproj", "{53F73827-3C41-454D-B0E6-BF666714E87D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5BB050B-9AAC-4D1C-926F-44212CCB65ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5BB050B-9AAC-4D1C-926F-44212CCB65ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5BB050B-9AAC-4D1C-926F-44212CCB65ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5BB050B-9AAC-4D1C-926F-44212CCB65ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53F73827-3C41-454D-B0E6-BF666714E87D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F73827-3C41-454D-B0E6-BF666714E87D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F73827-3C41-454D-B0E6-BF666714E87D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F73827-3C41-454D-B0E6-BF666714E87D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EB1BD35-B451-438E-AC9F-82B4B7AFEB4F}
+	EndGlobalSection
+EndGlobal
