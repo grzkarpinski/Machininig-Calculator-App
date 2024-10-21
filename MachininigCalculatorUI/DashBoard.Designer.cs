@@ -55,6 +55,16 @@
             diameterLabel = new Label();
             DinputBox = new TextBox();
             dUnitLabel = new Label();
+            apLabel = new Label();
+            aeLabel = new Label();
+            calculateVolumetricCuttingEfficiencyButton = new Button();
+            apUnitLabel = new Label();
+            aeUnitLabel = new Label();
+            apInputBox = new TextBox();
+            aeInputBox = new TextBox();
+            qLabel = new Label();
+            qOutputBox = new TextBox();
+            qUnitLabel = new Label();
             statusStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -72,7 +82,7 @@
             // 
             vcLabel.AutoSize = true;
             vcLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            vcLabel.Location = new Point(41, 107);
+            vcLabel.Location = new Point(49, 73);
             vcLabel.Name = "vcLabel";
             vcLabel.Size = new Size(45, 38);
             vcLabel.TabIndex = 1;
@@ -82,7 +92,7 @@
             // 
             vcInputBox.BorderStyle = BorderStyle.FixedSingle;
             vcInputBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            vcInputBox.Location = new Point(102, 101);
+            vcInputBox.Location = new Point(92, 68);
             vcInputBox.Name = "vcInputBox";
             vcInputBox.Size = new Size(125, 43);
             vcInputBox.TabIndex = 2;
@@ -92,7 +102,7 @@
             // 
             radioButtonMilling.AutoSize = true;
             radioButtonMilling.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            radioButtonMilling.Location = new Point(41, 53);
+            radioButtonMilling.Location = new Point(49, 125);
             radioButtonMilling.Name = "radioButtonMilling";
             radioButtonMilling.Size = new Size(178, 42);
             radioButtonMilling.TabIndex = 3;
@@ -104,7 +114,7 @@
             // 
             radioButtonDrilling.AutoSize = true;
             radioButtonDrilling.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            radioButtonDrilling.Location = new Point(230, 53);
+            radioButtonDrilling.Location = new Point(238, 125);
             radioButtonDrilling.Name = "radioButtonDrilling";
             radioButtonDrilling.Size = new Size(162, 42);
             radioButtonDrilling.TabIndex = 4;
@@ -116,7 +126,7 @@
             // 
             vcUnitLabel.AutoSize = true;
             vcUnitLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            vcUnitLabel.Location = new Point(233, 101);
+            vcUnitLabel.Location = new Point(233, 73);
             vcUnitLabel.Name = "vcUnitLabel";
             vcUnitLabel.Size = new Size(99, 38);
             vcUnitLabel.TabIndex = 5;
@@ -126,7 +136,7 @@
             // 
             fnLabel.AutoSize = true;
             fnLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            fnLabel.Location = new Point(396, 164);
+            fnLabel.Location = new Point(327, 192);
             fnLabel.Name = "fnLabel";
             fnLabel.Size = new Size(47, 38);
             fnLabel.TabIndex = 6;
@@ -136,7 +146,7 @@
             // 
             fnInputBox.BorderStyle = BorderStyle.FixedSingle;
             fnInputBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            fnInputBox.Location = new Point(452, 162);
+            fnInputBox.Location = new Point(380, 187);
             fnInputBox.Name = "fnInputBox";
             fnInputBox.Size = new Size(125, 43);
             fnInputBox.TabIndex = 7;
@@ -145,7 +155,7 @@
             // 
             fnUnitLabel.AutoSize = true;
             fnUnitLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            fnUnitLabel.Location = new Point(595, 164);
+            fnUnitLabel.Location = new Point(511, 189);
             fnUnitLabel.Name = "fnUnitLabel";
             fnUnitLabel.Size = new Size(124, 38);
             fnUnitLabel.TabIndex = 8;
@@ -155,7 +165,7 @@
             // 
             fzLabel.AutoSize = true;
             fzLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            fzLabel.Location = new Point(41, 164);
+            fzLabel.Location = new Point(41, 195);
             fzLabel.Name = "fzLabel";
             fzLabel.Size = new Size(44, 38);
             fzLabel.TabIndex = 9;
@@ -165,7 +175,7 @@
             // 
             fzInputBox.BorderStyle = BorderStyle.FixedSingle;
             fzInputBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            fzInputBox.Location = new Point(105, 168);
+            fzInputBox.Location = new Point(88, 190);
             fzInputBox.Name = "fzInputBox";
             fzInputBox.Size = new Size(125, 43);
             fzInputBox.TabIndex = 10;
@@ -174,7 +184,7 @@
             // 
             fzUnitLabel.AutoSize = true;
             fzUnitLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            fzUnitLabel.Location = new Point(243, 164);
+            fzUnitLabel.Location = new Point(219, 192);
             fzUnitLabel.Name = "fzUnitLabel";
             fzUnitLabel.Size = new Size(89, 38);
             fzUnitLabel.TabIndex = 11;
@@ -184,7 +194,7 @@
             // 
             zLabel.AutoSize = true;
             zLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            zLabel.Location = new Point(41, 236);
+            zLabel.Location = new Point(673, 192);
             zLabel.Name = "zLabel";
             zLabel.Size = new Size(33, 38);
             zLabel.TabIndex = 12;
@@ -194,7 +204,7 @@
             // 
             zInputBox.BorderStyle = BorderStyle.FixedSingle;
             zInputBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            zInputBox.Location = new Point(105, 234);
+            zInputBox.Location = new Point(712, 184);
             zInputBox.Name = "zInputBox";
             zInputBox.Size = new Size(125, 43);
             zInputBox.TabIndex = 13;
@@ -203,7 +213,7 @@
             // 
             zUnitLabel.AutoSize = true;
             zUnitLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            zUnitLabel.Location = new Point(241, 240);
+            zUnitLabel.Location = new Point(843, 186);
             zUnitLabel.Name = "zUnitLabel";
             zUnitLabel.Size = new Size(91, 38);
             zUnitLabel.TabIndex = 14;
@@ -211,7 +221,7 @@
             // 
             // calculateBasicParametersButton
             // 
-            calculateBasicParametersButton.Location = new Point(41, 296);
+            calculateBasicParametersButton.Location = new Point(41, 263);
             calculateBasicParametersButton.Name = "calculateBasicParametersButton";
             calculateBasicParametersButton.Size = new Size(384, 49);
             calculateBasicParametersButton.TabIndex = 15;
@@ -222,7 +232,7 @@
             // revolutionsOutputBox
             // 
             revolutionsOutputBox.BorderStyle = BorderStyle.FixedSingle;
-            revolutionsOutputBox.Location = new Point(159, 361);
+            revolutionsOutputBox.Location = new Point(187, 338);
             revolutionsOutputBox.Name = "revolutionsOutputBox";
             revolutionsOutputBox.ReadOnly = true;
             revolutionsOutputBox.Size = new Size(125, 47);
@@ -232,16 +242,16 @@
             // revolutionsLabel
             // 
             revolutionsLabel.AutoSize = true;
-            revolutionsLabel.Location = new Point(41, 367);
+            revolutionsLabel.Location = new Point(41, 344);
             revolutionsLabel.Name = "revolutionsLabel";
-            revolutionsLabel.Size = new Size(112, 41);
+            revolutionsLabel.Size = new Size(136, 41);
             revolutionsLabel.TabIndex = 17;
-            revolutionsLabel.Text = "Obroty";
+            revolutionsLabel.Text = "Obroty S";
             // 
             // revolutionsUnitLabel
             // 
             revolutionsUnitLabel.AutoSize = true;
-            revolutionsUnitLabel.Location = new Point(293, 363);
+            revolutionsUnitLabel.Location = new Point(318, 340);
             revolutionsUnitLabel.Name = "revolutionsUnitLabel";
             revolutionsUnitLabel.Size = new Size(126, 41);
             revolutionsUnitLabel.TabIndex = 18;
@@ -250,16 +260,16 @@
             // feedLabel
             // 
             feedLabel.AutoSize = true;
-            feedLabel.Location = new Point(41, 424);
+            feedLabel.Location = new Point(481, 340);
             feedLabel.Name = "feedLabel";
-            feedLabel.Size = new Size(104, 41);
+            feedLabel.Size = new Size(127, 41);
             feedLabel.TabIndex = 19;
-            feedLabel.Text = "Posuw";
+            feedLabel.Text = "Posuw F";
             // 
             // FeedUnitLabel
             // 
             FeedUnitLabel.AutoSize = true;
-            FeedUnitLabel.Location = new Point(293, 424);
+            FeedUnitLabel.Location = new Point(762, 340);
             FeedUnitLabel.Name = "FeedUnitLabel";
             FeedUnitLabel.Size = new Size(132, 41);
             FeedUnitLabel.TabIndex = 20;
@@ -268,7 +278,7 @@
             // feedOutputBox
             // 
             feedOutputBox.BorderStyle = BorderStyle.FixedSingle;
-            feedOutputBox.Location = new Point(159, 418);
+            feedOutputBox.Location = new Point(614, 334);
             feedOutputBox.Name = "feedOutputBox";
             feedOutputBox.ReadOnly = true;
             feedOutputBox.Size = new Size(125, 47);
@@ -279,9 +289,9 @@
             statusStrip.BackColor = Color.Transparent;
             statusStrip.ImageScalingSize = new Size(20, 20);
             statusStrip.Items.AddRange(new ToolStripItem[] { systemStatus });
-            statusStrip.Location = new Point(0, 593);
+            statusStrip.Location = new Point(0, 636);
             statusStrip.Name = "statusStrip";
-            statusStrip.Size = new Size(1044, 37);
+            statusStrip.Size = new Size(982, 37);
             statusStrip.TabIndex = 23;
             statusStrip.Text = "statusStrip1";
             // 
@@ -296,7 +306,7 @@
             // 
             diameterLabel.AutoSize = true;
             diameterLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            diameterLabel.Location = new Point(396, 102);
+            diameterLabel.Location = new Point(380, 73);
             diameterLabel.Name = "diameterLabel";
             diameterLabel.Size = new Size(37, 38);
             diameterLabel.TabIndex = 24;
@@ -306,7 +316,7 @@
             // 
             DinputBox.BorderStyle = BorderStyle.FixedSingle;
             DinputBox.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            DinputBox.Location = new Point(452, 97);
+            DinputBox.Location = new Point(423, 68);
             DinputBox.Name = "DinputBox";
             DinputBox.Size = new Size(125, 43);
             DinputBox.TabIndex = 25;
@@ -315,18 +325,116 @@
             // 
             dUnitLabel.AutoSize = true;
             dUnitLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            dUnitLabel.Location = new Point(595, 99);
+            dUnitLabel.Location = new Point(554, 70);
             dUnitLabel.Name = "dUnitLabel";
             dUnitLabel.Size = new Size(65, 38);
             dUnitLabel.TabIndex = 26;
             dUnitLabel.Text = "mm";
+            // 
+            // apLabel
+            // 
+            apLabel.AutoSize = true;
+            apLabel.Location = new Point(41, 425);
+            apLabel.Name = "apLabel";
+            apLabel.Size = new Size(55, 41);
+            apLabel.TabIndex = 27;
+            apLabel.Text = "Ap";
+            // 
+            // aeLabel
+            // 
+            aeLabel.AutoSize = true;
+            aeLabel.Location = new Point(363, 425);
+            aeLabel.Name = "aeLabel";
+            aeLabel.Size = new Size(53, 41);
+            aeLabel.TabIndex = 28;
+            aeLabel.Text = "Ae";
+            // 
+            // calculateVolumetricCuttingEfficiencyButton
+            // 
+            calculateVolumetricCuttingEfficiencyButton.Location = new Point(41, 495);
+            calculateVolumetricCuttingEfficiencyButton.Name = "calculateVolumetricCuttingEfficiencyButton";
+            calculateVolumetricCuttingEfficiencyButton.Size = new Size(384, 49);
+            calculateVolumetricCuttingEfficiencyButton.TabIndex = 29;
+            calculateVolumetricCuttingEfficiencyButton.Text = "2 Oblicz Q";
+            calculateVolumetricCuttingEfficiencyButton.UseVisualStyleBackColor = true;
+            // 
+            // apUnitLabel
+            // 
+            apUnitLabel.AutoSize = true;
+            apUnitLabel.Location = new Point(238, 425);
+            apUnitLabel.Name = "apUnitLabel";
+            apUnitLabel.Size = new Size(70, 41);
+            apUnitLabel.TabIndex = 30;
+            apUnitLabel.Text = "mm";
+            // 
+            // aeUnitLabel
+            // 
+            aeUnitLabel.AutoSize = true;
+            aeUnitLabel.Location = new Point(565, 425);
+            aeUnitLabel.Name = "aeUnitLabel";
+            aeUnitLabel.Size = new Size(70, 41);
+            aeUnitLabel.TabIndex = 31;
+            aeUnitLabel.Text = "mm";
+            // 
+            // apInputBox
+            // 
+            apInputBox.BorderStyle = BorderStyle.FixedSingle;
+            apInputBox.Location = new Point(102, 419);
+            apInputBox.Name = "apInputBox";
+            apInputBox.Size = new Size(125, 47);
+            apInputBox.TabIndex = 32;
+            // 
+            // aeInputBox
+            // 
+            aeInputBox.BorderStyle = BorderStyle.FixedSingle;
+            aeInputBox.Location = new Point(422, 419);
+            aeInputBox.Name = "aeInputBox";
+            aeInputBox.Size = new Size(125, 47);
+            aeInputBox.TabIndex = 33;
+            // 
+            // qLabel
+            // 
+            qLabel.AutoSize = true;
+            qLabel.Location = new Point(49, 575);
+            qLabel.Name = "qLabel";
+            qLabel.Size = new Size(41, 41);
+            qLabel.TabIndex = 34;
+            qLabel.Text = "Q";
+            // 
+            // qOutputBox
+            // 
+            qOutputBox.BorderStyle = BorderStyle.FixedSingle;
+            qOutputBox.Location = new Point(102, 569);
+            qOutputBox.Name = "qOutputBox";
+            qOutputBox.ReadOnly = true;
+            qOutputBox.Size = new Size(125, 47);
+            qOutputBox.TabIndex = 35;
+            // 
+            // qUnitLabel
+            // 
+            qUnitLabel.AutoSize = true;
+            qUnitLabel.Location = new Point(233, 575);
+            qUnitLabel.Name = "qUnitLabel";
+            qUnitLabel.Size = new Size(136, 41);
+            qUnitLabel.TabIndex = 36;
+            qUnitLabel.Text = "cm3/min";
             // 
             // DashBoard
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1044, 630);
+            ClientSize = new Size(982, 673);
+            Controls.Add(qUnitLabel);
+            Controls.Add(qOutputBox);
+            Controls.Add(qLabel);
+            Controls.Add(aeInputBox);
+            Controls.Add(apInputBox);
+            Controls.Add(aeUnitLabel);
+            Controls.Add(apUnitLabel);
+            Controls.Add(calculateVolumetricCuttingEfficiencyButton);
+            Controls.Add(aeLabel);
+            Controls.Add(apLabel);
             Controls.Add(dUnitLabel);
             Controls.Add(DinputBox);
             Controls.Add(diameterLabel);
@@ -356,7 +464,7 @@
             Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 238);
             Margin = new Padding(6);
             Name = "DashBoard";
-            Text = "Technologist Calculator";
+            Text = "Technologist Calculator by Grzegorz Karpinski";
             Load += DashBoard_Load;
             statusStrip.ResumeLayout(false);
             statusStrip.PerformLayout();
@@ -393,5 +501,15 @@
         private Label diameterLabel;
         private TextBox DinputBox;
         private Label dUnitLabel;
+        private Label apLabel;
+        private Label aeLabel;
+        private Button calculateVolumetricCuttingEfficiencyButton;
+        private Label apUnitLabel;
+        private Label aeUnitLabel;
+        private TextBox apInputBox;
+        private TextBox aeInputBox;
+        private Label qLabel;
+        private TextBox qOutputBox;
+        private Label qUnitLabel;
     }
 }

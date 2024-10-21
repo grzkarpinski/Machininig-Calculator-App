@@ -8,9 +8,6 @@ namespace MachininigCalculatorLibary
 {
     public class readNumberFromUI
     {
-        //method to read number from UI
-        //input: string
-        //output: int number or double number
         public static int readIntNumber(string input)
         {
             if (int.TryParse(input, out int intNumber))
@@ -23,9 +20,6 @@ namespace MachininigCalculatorLibary
             }
         }
 
-        // Method to read a double number from UI
-        // Input: string
-        // Output: double number
         public static double readDoubleNumber(string input)
         {
             if (double.TryParse(input, out double doubleNumber))
