@@ -357,6 +357,7 @@
             calculateVolumetricCuttingEfficiencyButton.TabIndex = 29;
             calculateVolumetricCuttingEfficiencyButton.Text = "2 Oblicz Q";
             calculateVolumetricCuttingEfficiencyButton.UseVisualStyleBackColor = true;
+            calculateVolumetricCuttingEfficiencyButton.Click += calculateVolumetricCuttingEfficiencyButton_Click;
             // 
             // apUnitLabel
             // 
