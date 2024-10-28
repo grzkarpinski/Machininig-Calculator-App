@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MachininigCalculatorLibary
 {
-    public class readNumberFromUI
+    public class ReadNumberFromUI
     {
         public static int readIntNumber(string input)
         {

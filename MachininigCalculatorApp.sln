@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachininigCalculatorUI", "MachininigCalculatorUI\MachininigCalculatorUI.csproj", "{A5BB050B-9AAC-4D1C-926F-44212CCB65ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MachininigCalculatorUI", "MachininigCalculatorUI\MachininigCalculatorUI.csproj", "{A5BB050B-9AAC-4D1C-926F-44212CCB65ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachininigCalculatorLibary", "MachininigCalculatorLibary\MachininigCalculatorLibary.csproj", "{53F73827-3C41-454D-B0E6-BF666714E87D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MachininigCalculatorLibary", "MachininigCalculatorLibary\MachininigCalculatorLibary.csproj", "{53F73827-3C41-454D-B0E6-BF666714E87D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachiningCalculatorTests", "MachiningCalculatorTests\MachiningCalculatorTests.csproj", "{79389D9A-F728-4D70-B99C-73D2C516BB09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{53F73827-3C41-454D-B0E6-BF666714E87D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53F73827-3C41-454D-B0E6-BF666714E87D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53F73827-3C41-454D-B0E6-BF666714E87D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79389D9A-F728-4D70-B99C-73D2C516BB09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79389D9A-F728-4D70-B99C-73D2C516BB09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79389D9A-F728-4D70-B99C-73D2C516BB09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79389D9A-F728-4D70-B99C-73D2C516BB09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

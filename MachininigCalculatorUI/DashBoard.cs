@@ -9,6 +9,8 @@ public partial class DashBoard : Form
     public DashBoard()
     {
         InitializeComponent();
+        radioButtonMilling.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
+        radioButtonDrilling.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
     }
 
     private void calculateBasicParametersButton_Click(object sender, EventArgs e)
@@ -73,23 +75,37 @@ public partial class DashBoard : Form
 
     public void ReadMillingParametersFromUI(ToolMilling tool)
     {
-        tool.toolDiameter = readNumberFromUI.readIntNumber(DinputBox.Text);
-        tool.cuttingSpeed = readNumberFromUI.readIntNumber(vcInputBox.Text);
-        tool.numberOfTeeth = readNumberFromUI.readIntNumber(zInputBox.Text);
-        tool.feedRatePerTooth = readNumberFromUI.readDoubleNumber(fzInputBox.Text);
+        tool.toolDiameter = ReadNumberFromUI.readIntNumber(DinputBox.Text);
+        tool.cuttingSpeed = ReadNumberFromUI.readIntNumber(vcInputBox.Text);
+        tool.numberOfTeeth = ReadNumberFromUI.readIntNumber(zInputBox.Text);
+        tool.feedRatePerTooth = ReadNumberFromUI.readDoubleNumber(fzInputBox.Text);
     }
 
     public void ReadDrillingParametersFromUI(ToolDrilling tool)
     {
-        tool.toolDiameter = readNumberFromUI.readIntNumber(DinputBox.Text);
-        tool.cuttingSpeed = readNumberFromUI.readIntNumber(vcInputBox.Text);
-        tool.feedRatePerRevolution = readNumberFromUI.readDoubleNumber(fnInputBox.Text);
+        tool.toolDiameter = ReadNumberFromUI.readIntNumber(DinputBox.Text);
+        tool.cuttingSpeed = ReadNumberFromUI.readIntNumber(vcInputBox.Text);
+        tool.feedRatePerRevolution = ReadNumberFromUI.readDoubleNumber(fnInputBox.Text);
     }
 
     public void ReadVolumetricParametersFromUi(ToolMilling tool)
     {
-        tool.millingDepth = readNumberFromUI.readDoubleNumber(apInputBox.Text);
-        tool.millingWidth = readNumberFromUI.readDoubleNumber(aeInputBox.Text);
+        tool.millingDepth = ReadNumberFromUI.readDoubleNumber(apInputBox.Text);
+        tool.millingWidth = ReadNumberFromUI.readDoubleNumber(aeInputBox.Text);
+    }
+
+    private void RadioButton_CheckedChanged(object sender, EventArgs e)
+    {
+        if (radioButtonMilling.Checked)
+        {
+            fnInputBox.ReadOnly = true;
+            fzInputBox.ReadOnly = false;
+        }
+        else if (radioButtonDrilling.Checked)
+        {
+            fnInputBox.ReadOnly = false;
+            fzInputBox.ReadOnly = true;
+        }
     }
 
     private void vcInputBox_TextChanged(object sender, EventArgs e)
@@ -105,5 +121,24 @@ public partial class DashBoard : Form
     private void DashBoard_Load(object sender, EventArgs e)
     {
 
+    }
+
+    private void clearButton_Click(object sender, EventArgs e)
+    {
+        clearAllFields();
+    }
+
+    private void clearAllFields()
+    {
+        DinputBox.Text = "";
+        vcInputBox.Text = "";
+        zInputBox.Text = "";
+        fzInputBox.Text = "";
+        fnInputBox.Text = "";
+        apInputBox.Text = "";
+        aeInputBox.Text = "";
+        revolutionsOutputBox.Text = "";
+        feedOutputBox.Text = "";
+        qOutputBox.Text = "";
     }
 }

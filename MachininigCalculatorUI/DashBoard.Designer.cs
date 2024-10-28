@@ -65,6 +65,7 @@
             qLabel = new Label();
             qOutputBox = new TextBox();
             qUnitLabel = new Label();
+            clearButton = new Button();
             statusStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             // 
             formHeader.AutoSize = true;
             formHeader.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            formHeader.Location = new Point(193, -10);
+            formHeader.Location = new Point(168, 5);
             formHeader.Name = "formHeader";
             formHeader.Size = new Size(669, 60);
             formHeader.TabIndex = 0;
@@ -420,12 +421,23 @@
             qUnitLabel.TabIndex = 36;
             qUnitLabel.Text = "cm3/min";
             // 
+            // clearButton
+            // 
+            clearButton.Location = new Point(755, 569);
+            clearButton.Name = "clearButton";
+            clearButton.Size = new Size(179, 45);
+            clearButton.TabIndex = 37;
+            clearButton.Text = "CLEAR";
+            clearButton.UseVisualStyleBackColor = true;
+            clearButton.Click += clearButton_Click;
+            // 
             // DashBoard
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(982, 673);
+            Controls.Add(clearButton);
             Controls.Add(qUnitLabel);
             Controls.Add(qOutputBox);
             Controls.Add(qLabel);
@@ -512,5 +524,6 @@
         private Label qLabel;
         private TextBox qOutputBox;
         private Label qUnitLabel;
+        private Button clearButton;
     }
 }
