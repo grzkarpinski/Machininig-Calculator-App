@@ -75,7 +75,7 @@ public partial class DashBoard : Form
 
     public void ReadMillingParametersFromUI(ToolMilling tool)
     {
-        tool.toolDiameter = ReadNumberFromUI.readIntNumber(DinputBox.Text);
+        tool.toolDiameter = ReadNumberFromUI.readDoubleNumber(DinputBox.Text);
         tool.cuttingSpeed = ReadNumberFromUI.readIntNumber(vcInputBox.Text);
         tool.numberOfTeeth = ReadNumberFromUI.readIntNumber(zInputBox.Text);
         tool.feedRatePerTooth = ReadNumberFromUI.readDoubleNumber(fzInputBox.Text);
@@ -100,11 +100,13 @@ public partial class DashBoard : Form
         {
             fnInputBox.ReadOnly = true;
             fzInputBox.ReadOnly = false;
+            zInputBox.ReadOnly = false;
         }
         else if (radioButtonDrilling.Checked)
         {
             fnInputBox.ReadOnly = false;
             fzInputBox.ReadOnly = true;
+            zInputBox.ReadOnly = true;
         }
     }
 
