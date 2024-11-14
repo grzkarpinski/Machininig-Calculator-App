@@ -83,7 +83,7 @@ public partial class DashBoard : Form
 
     public void ReadDrillingParametersFromUI(ToolDrilling tool)
     {
-        tool.toolDiameter = ReadNumberFromUI.readIntNumber(DinputBox.Text);
+        tool.toolDiameter = ReadNumberFromUI.readDoubleNumber(DinputBox.Text);
         tool.cuttingSpeed = ReadNumberFromUI.readIntNumber(vcInputBox.Text);
         tool.feedRatePerRevolution = ReadNumberFromUI.readDoubleNumber(fnInputBox.Text);
     }
