@@ -222,12 +222,13 @@
             // 
             // calculateBasicParametersButton
             // 
+            calculateBasicParametersButton.BackColor = Color.White;
             calculateBasicParametersButton.Location = new Point(41, 263);
             calculateBasicParametersButton.Name = "calculateBasicParametersButton";
             calculateBasicParametersButton.Size = new Size(384, 49);
             calculateBasicParametersButton.TabIndex = 15;
-            calculateBasicParametersButton.Text = "1 Oblicz S i F";
-            calculateBasicParametersButton.UseVisualStyleBackColor = true;
+            calculateBasicParametersButton.Text = "1. Oblicz S i F";
+            calculateBasicParametersButton.UseVisualStyleBackColor = false;
             calculateBasicParametersButton.Click += calculateBasicParametersButton_Click;
             // 
             // revolutionsOutputBox
@@ -270,7 +271,7 @@
             // FeedUnitLabel
             // 
             FeedUnitLabel.AutoSize = true;
-            FeedUnitLabel.Location = new Point(762, 340);
+            FeedUnitLabel.Location = new Point(745, 336);
             FeedUnitLabel.Name = "FeedUnitLabel";
             FeedUnitLabel.Size = new Size(132, 41);
             FeedUnitLabel.TabIndex = 20;
@@ -356,7 +357,7 @@
             calculateVolumetricCuttingEfficiencyButton.Name = "calculateVolumetricCuttingEfficiencyButton";
             calculateVolumetricCuttingEfficiencyButton.Size = new Size(384, 49);
             calculateVolumetricCuttingEfficiencyButton.TabIndex = 29;
-            calculateVolumetricCuttingEfficiencyButton.Text = "2 Oblicz Q";
+            calculateVolumetricCuttingEfficiencyButton.Text = "2. Oblicz Q";
             calculateVolumetricCuttingEfficiencyButton.UseVisualStyleBackColor = true;
             calculateVolumetricCuttingEfficiencyButton.Click += calculateVolumetricCuttingEfficiencyButton_Click;
             // 
@@ -372,7 +373,7 @@
             // aeUnitLabel
             // 
             aeUnitLabel.AutoSize = true;
-            aeUnitLabel.Location = new Point(565, 425);
+            aeUnitLabel.Location = new Point(554, 425);
             aeUnitLabel.Name = "aeUnitLabel";
             aeUnitLabel.Size = new Size(70, 41);
             aeUnitLabel.TabIndex = 31;
