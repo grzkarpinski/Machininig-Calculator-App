@@ -226,7 +226,7 @@
             calculateBasicParametersButton.Name = "calculateBasicParametersButton";
             calculateBasicParametersButton.Size = new Size(384, 49);
             calculateBasicParametersButton.TabIndex = 15;
-            calculateBasicParametersButton.Text = "1 Oblicz n i F";
+            calculateBasicParametersButton.Text = "1 Oblicz S i F";
             calculateBasicParametersButton.UseVisualStyleBackColor = true;
             calculateBasicParametersButton.Click += calculateBasicParametersButton_Click;
             // 

@@ -48,50 +48,81 @@ public partial class DashBoard : Form
                 feedOutputBox.Text = tool.feedPerMinuteDrilling.ToString();
             }
 
-            systemStatus.Text = "Done";
+            systemStatus.Text = "S and F calculated!";
         }
         catch (Exception ex)
         {
-            systemStatus.Text = "Error";
+            systemStatus.Text = $"Error in calculating S and F: {ex.Message}";
         }
     }
 
     private void calculateVolumetricCuttingEfficiencyButton_Click(object sender, EventArgs e)
     {
-        if (radioButtonMilling.Checked && feedOutputBox.Text != "")
+        try
         {
-            ReadVolumetricParametersFromUi(_millingTool);
-            _millingTool.CalculateVolmetricEfficency(_millingTool.feedPerMinuteMilling, _millingTool.millingWidth, _millingTool.millingDepth);
-            qOutputBox.Text = _millingTool.volmetricEfficency.ToString();
+            if (radioButtonMilling.Checked && feedOutputBox.Text != "")
+            {
+                ReadVolumetricParametersFromUi(_millingTool);
+                _millingTool.CalculateVolmetricEfficency(_millingTool.feedPerMinuteMilling, _millingTool.millingWidth, _millingTool.millingDepth);
+                qOutputBox.Text = _millingTool.volmetricEfficency.ToString();
 
-            systemStatus.Text = "Q calculated!";
+                systemStatus.Text = "Q calculated!";
+            }
+            else
+            {
+                systemStatus.Text = "Calculate basic milling parameters first";
+            }
         }
-        else
+        catch (Exception ex)
         {
-            systemStatus.Text = "Calculate basic milling parameters first";
+            systemStatus.Text = $"Error in calculating Q: {ex.Message}";
         }
 
     }
 
     public void ReadMillingParametersFromUI(ToolMilling tool)
     {
-        tool.toolDiameter = ReadNumberFromUI.readDoubleNumber(DinputBox.Text);
-        tool.cuttingSpeed = ReadNumberFromUI.readIntNumber(vcInputBox.Text);
-        tool.numberOfTeeth = ReadNumberFromUI.readIntNumber(zInputBox.Text);
-        tool.feedRatePerTooth = ReadNumberFromUI.readDoubleNumber(fzInputBox.Text);
+        try
+        {
+            tool.toolDiameter = ReadNumberFromUI.readDoubleNumber(DinputBox.Text);
+            tool.cuttingSpeed = ReadNumberFromUI.readIntNumber(vcInputBox.Text);
+            tool.numberOfTeeth = ReadNumberFromUI.readIntNumber(zInputBox.Text);
+            tool.feedRatePerTooth = ReadNumberFromUI.readDoubleNumber(fzInputBox.Text);
+        }
+        catch (Exception ex)
+        {
+            systemStatus.Text = $"Error: {ex.Message}";
+            throw;
+        }
     }
 
     public void ReadDrillingParametersFromUI(ToolDrilling tool)
     {
-        tool.toolDiameter = ReadNumberFromUI.readDoubleNumber(DinputBox.Text);
-        tool.cuttingSpeed = ReadNumberFromUI.readIntNumber(vcInputBox.Text);
-        tool.feedRatePerRevolution = ReadNumberFromUI.readDoubleNumber(fnInputBox.Text);
+        try
+        {
+            tool.toolDiameter = ReadNumberFromUI.readDoubleNumber(DinputBox.Text);
+            tool.cuttingSpeed = ReadNumberFromUI.readIntNumber(vcInputBox.Text);
+            tool.feedRatePerRevolution = ReadNumberFromUI.readDoubleNumber(fnInputBox.Text);
+        }
+        catch (Exception ex)
+        {
+            systemStatus.Text = $"Error: {ex.Message}";
+            throw;
+        }
     }
 
     public void ReadVolumetricParametersFromUi(ToolMilling tool)
     {
-        tool.millingDepth = ReadNumberFromUI.readDoubleNumber(apInputBox.Text);
-        tool.millingWidth = ReadNumberFromUI.readDoubleNumber(aeInputBox.Text);
+        try
+        {
+            tool.millingDepth = ReadNumberFromUI.readDoubleNumber(apInputBox.Text);
+            tool.millingWidth = ReadNumberFromUI.readDoubleNumber(aeInputBox.Text);
+        }
+        catch (Exception ex)
+        {
+            systemStatus.Text = $"Error: {ex.Message}";
+            throw;
+        }
     }
 
     private void RadioButton_CheckedChanged(object sender, EventArgs e)
@@ -101,12 +132,16 @@ public partial class DashBoard : Form
             fnInputBox.ReadOnly = true;
             fzInputBox.ReadOnly = false;
             zInputBox.ReadOnly = false;
+            apInputBox.ReadOnly = false;
+            aeInputBox.ReadOnly = false;
         }
         else if (radioButtonDrilling.Checked)
         {
             fnInputBox.ReadOnly = false;
             fzInputBox.ReadOnly = true;
             zInputBox.ReadOnly = true;
+            apInputBox.ReadOnly = true;
+            aeInputBox.ReadOnly = true;
         }
     }
 

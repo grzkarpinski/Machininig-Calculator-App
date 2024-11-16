@@ -16,7 +16,7 @@ namespace MachininigCalculatorLibary
             }
             else
             {
-                throw new Exception("Input is not a valid integer number");
+                throw new Exception($"Input '{input}' is not a valid integer number");
             }
         }
 
@@ -28,7 +28,7 @@ namespace MachininigCalculatorLibary
             }
             else
             {
-                throw new Exception("Input is not a valid double number");
+                throw new Exception($"Input '{input}' is not a valid double number");
             }
         }
     }
