@@ -15,11 +15,8 @@ public partial class DashBoard : Form
 
     private void calculateBasicParametersButton_Click(object sender, EventArgs e)
     {
-        //validate input
-
         try
         {
-            systemStatus.Text = "Calculating...";
 
             if (radioButtonMilling.Checked)
             {
