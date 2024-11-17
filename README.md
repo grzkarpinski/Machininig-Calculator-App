@@ -15,7 +15,9 @@ Machining Calculator provides graphical interface for calculating basics milling
 ![Machining Calculator App results](Images/Screenshot2.png "Results")
 4. Enjoy!
 
+## UPDATES:
+1.1.0 : Added more specific errors info
+
 ## Upcoming Changes
-* Adding more specific error info
 * selecting parameters using the slider from the given range
 * ability to save to file
