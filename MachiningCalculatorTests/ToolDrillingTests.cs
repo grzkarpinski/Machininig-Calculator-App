@@ -15,14 +15,14 @@ namespace MachiningCalculatorTests
         {
             //Arrange
             ToolDrilling toolDrilling = new ToolDrilling();
-            toolDrilling.feedRatePerRevolution = 0.1;
+            toolDrilling.FeedRatePerRevolution = 0.1;
             int revolutions = 100;
 
             //Act
-            toolDrilling.CalculateFeedPerMinuteDrilling(toolDrilling.feedRatePerRevolution, revolutions);
+            toolDrilling.CalculateFeedPerMinuteDrilling(toolDrilling.FeedRatePerRevolution, revolutions);
 
             //Assert
-            Assert.Equal(10, toolDrilling.feedPerMinuteDrilling);
+            Assert.Equal(10, toolDrilling.FeedPerMinuteDrilling);
         }
     }
 }

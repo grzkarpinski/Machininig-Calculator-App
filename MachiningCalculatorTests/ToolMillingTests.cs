@@ -14,15 +14,15 @@ namespace MachiningCalculatorTests
         {
             //Arrange
             ToolMilling toolMilling = new ToolMilling();
-            toolMilling.feedRatePerTooth = 0.1;
-            toolMilling.numberOfTeeth = 2;
+            toolMilling.FeedRatePerTooth = 0.1;
+            toolMilling.NumberOfTeeth = 2;
             int revolutions = 1000;
 
             //Act
-            toolMilling.CalculateFeedPerMinuteMilling(toolMilling.feedRatePerTooth, toolMilling.numberOfTeeth, revolutions);
+            toolMilling.CalculateFeedPerMinuteMilling(toolMilling.FeedRatePerTooth, toolMilling.NumberOfTeeth, revolutions);
 
             //Assert
-            Assert.Equal(200, toolMilling.feedPerMinuteMilling);
+            Assert.Equal(200, toolMilling.FeedPerMinuteMilling);
         }
 
         [Fact]
@@ -30,15 +30,15 @@ namespace MachiningCalculatorTests
         {
             //Arrange
             ToolMilling toolMilling = new ToolMilling();
-            toolMilling.feedPerMinuteMilling = 200;
-            toolMilling.millingWidth = 10;
-            toolMilling.millingDepth = 5;
+            toolMilling.FeedPerMinuteMilling = 200;
+            toolMilling.MillingWidth = 10;
+            toolMilling.MillingDepth = 5;
 
             //Act
-            toolMilling.CalculateVolmetricEfficency(toolMilling.feedPerMinuteMilling, toolMilling.millingWidth, toolMilling.millingDepth);
+            toolMilling.CalculateVolmetricEfficency(toolMilling.FeedPerMinuteMilling, toolMilling.MillingWidth, toolMilling.MillingDepth);
 
             //Assert
-            Assert.Equal(10, toolMilling.volmetricEfficency);
+            Assert.Equal(10, toolMilling.VolmetricEfficency);
         }
     }
 }

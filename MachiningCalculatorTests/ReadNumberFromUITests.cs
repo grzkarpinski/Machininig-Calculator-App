@@ -20,7 +20,7 @@ namespace MachiningCalculatorTests
             int expected = 5;
 
             // Act
-            int actual = ReadNumberFromUI.readIntNumber(input);
+            int actual = ReadNumberFromUI.ReadIntNumber(input);
 
             // Assert
             Assert.Equal(expected, actual);
@@ -33,7 +33,7 @@ namespace MachiningCalculatorTests
             string input = "abc";
 
             // Act and Assert
-            Assert.Throws<Exception>(() => ReadNumberFromUI.readIntNumber(input));
+            Assert.Throws<Exception>(() => ReadNumberFromUI.ReadIntNumber(input));
         }
 
         [Fact]
@@ -44,7 +44,7 @@ namespace MachiningCalculatorTests
             double expected = 5.5;
 
             // Act
-            double actual = ReadNumberFromUI.readDoubleNumber(input);
+            double actual = ReadNumberFromUI.ReadDoubleNumber(input);
 
             // Assert
             Assert.Equal(expected, actual);
@@ -57,7 +57,7 @@ namespace MachiningCalculatorTests
             string input = "abc";
 
             // Act and Assert
-            Assert.Throws<Exception>(() => ReadNumberFromUI.readDoubleNumber(input));
+            Assert.Throws<Exception>(() => ReadNumberFromUI.ReadDoubleNumber(input));
         }
     }
 }

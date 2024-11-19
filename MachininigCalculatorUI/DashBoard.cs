@@ -25,11 +25,13 @@ public partial class DashBoard : Form
 
                 ReadMillingParametersFromUI(_millingTool);
 
-                _millingTool.CalculateRevolutionsPerMinute(_millingTool.cuttingSpeed, _millingTool.toolDiameter);
-                revolutionsOutputBox.Text = _millingTool.revolutions.ToString();
+                _millingTool.CalculateRevolutionsPerMinute(_millingTool.CuttingSpeed, _millingTool.ToolDiameter);
+                revolutionsOutputBox.Text = _millingTool.Revolutions.ToString();
 
-                _millingTool.CalculateFeedPerMinuteMilling(_millingTool.feedRatePerTooth, _millingTool.numberOfTeeth, _millingTool.revolutions);
-                feedOutputBox.Text = _millingTool.feedPerMinuteMilling.ToString();
+                _millingTool.CalculateFeedPerMinuteMilling(_millingTool.FeedRatePerTooth, _millingTool.NumberOfTeeth, _millingTool.Revolutions);
+                feedOutputBox.Text = _millingTool.FeedPerMinuteMilling.ToString();
+
+                systemStatus.Text = "S and F calculated!";
             }
             else if (radioButtonDrilling.Checked)
             {
@@ -38,14 +40,19 @@ public partial class DashBoard : Form
 
                 ReadDrillingParametersFromUI(tool);
 
-                tool.CalculateRevolutionsPerMinute(tool.cuttingSpeed, tool.toolDiameter);
-                revolutionsOutputBox.Text = tool.revolutions.ToString();
+                tool.CalculateRevolutionsPerMinute(tool.CuttingSpeed, tool.ToolDiameter);
+                revolutionsOutputBox.Text = tool.Revolutions.ToString();
 
-                tool.CalculateFeedPerMinuteDrilling(tool.feedRatePerRevolution, tool.revolutions);
-                feedOutputBox.Text = tool.feedPerMinuteDrilling.ToString();
+                tool.CalculateFeedPerMinuteDrilling(tool.FeedRatePerRevolution, tool.Revolutions);
+                feedOutputBox.Text = tool.FeedPerMinuteDrilling.ToString();
+
+                systemStatus.Text = "S and F calculated!";
+            }
+            else
+            {
+                systemStatus.Text = "Select a machining type";
             }
 
-            systemStatus.Text = "S and F calculated!";
         }
         catch (Exception ex)
         {
@@ -60,8 +67,8 @@ public partial class DashBoard : Form
             if (radioButtonMilling.Checked && feedOutputBox.Text != "")
             {
                 ReadVolumetricParametersFromUi(_millingTool);
-                _millingTool.CalculateVolmetricEfficency(_millingTool.feedPerMinuteMilling, _millingTool.millingWidth, _millingTool.millingDepth);
-                qOutputBox.Text = _millingTool.volmetricEfficency.ToString();
+                _millingTool.CalculateVolmetricEfficency(_millingTool.FeedPerMinuteMilling, _millingTool.MillingWidth, _millingTool.MillingDepth);
+                qOutputBox.Text = _millingTool.VolmetricEfficency.ToString();
 
                 systemStatus.Text = "Q calculated!";
             }
@@ -81,10 +88,10 @@ public partial class DashBoard : Form
     {
         try
         {
-            tool.toolDiameter = ReadNumberFromUI.readDoubleNumber(DinputBox.Text);
-            tool.cuttingSpeed = ReadNumberFromUI.readIntNumber(vcInputBox.Text);
-            tool.numberOfTeeth = ReadNumberFromUI.readIntNumber(zInputBox.Text);
-            tool.feedRatePerTooth = ReadNumberFromUI.readDoubleNumber(fzInputBox.Text);
+            tool.ToolDiameter = ReadNumberFromUI.ReadDoubleNumber(DinputBox.Text);
+            tool.CuttingSpeed = ReadNumberFromUI.ReadIntNumber(vcInputBox.Text);
+            tool.NumberOfTeeth = ReadNumberFromUI.ReadIntNumber(zInputBox.Text);
+            tool.FeedRatePerTooth = ReadNumberFromUI.ReadDoubleNumber(fzInputBox.Text);
         }
         catch (Exception ex)
         {
@@ -97,9 +104,9 @@ public partial class DashBoard : Form
     {
         try
         {
-            tool.toolDiameter = ReadNumberFromUI.readDoubleNumber(DinputBox.Text);
-            tool.cuttingSpeed = ReadNumberFromUI.readIntNumber(vcInputBox.Text);
-            tool.feedRatePerRevolution = ReadNumberFromUI.readDoubleNumber(fnInputBox.Text);
+            tool.ToolDiameter = ReadNumberFromUI.ReadDoubleNumber(DinputBox.Text);
+            tool.CuttingSpeed = ReadNumberFromUI.ReadIntNumber(vcInputBox.Text);
+            tool.FeedRatePerRevolution = ReadNumberFromUI.ReadDoubleNumber(fnInputBox.Text);
         }
         catch (Exception ex)
         {
@@ -112,8 +119,8 @@ public partial class DashBoard : Form
     {
         try
         {
-            tool.millingDepth = ReadNumberFromUI.readDoubleNumber(apInputBox.Text);
-            tool.millingWidth = ReadNumberFromUI.readDoubleNumber(aeInputBox.Text);
+            tool.MillingDepth = ReadNumberFromUI.ReadDoubleNumber(apInputBox.Text);
+            tool.MillingWidth = ReadNumberFromUI.ReadDoubleNumber(aeInputBox.Text);
         }
         catch (Exception ex)
         {

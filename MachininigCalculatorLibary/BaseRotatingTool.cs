@@ -9,16 +9,16 @@ namespace MachininigCalculatorLibary
     public class BaseRotatingTool
     {
         //inputs
-        public double toolDiameter { get; set; }
-        public int cuttingSpeed { get; set; }
+        public double ToolDiameter { get; set; }
+        public int CuttingSpeed { get; set; }
 
         //outputs
-        public int revolutions { get; set; }
-        public int feed { get; set; }
+        public int Revolutions { get; set; }
+        public int Feed { get; set; }
 
-        public void CalculateRevolutionsPerMinute( int Vc, double D)
+        public void CalculateRevolutionsPerMinute( int cuttingSpeed, double toolDiameter)
         {
-            revolutions = (int)Math.Round(1000 * Vc / (Math.PI * D));
+            Revolutions = (int)Math.Round(1000 * cuttingSpeed / (Math.PI * toolDiameter));
         }
     }
 }

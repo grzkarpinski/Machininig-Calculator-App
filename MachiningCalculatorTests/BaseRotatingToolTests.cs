@@ -14,14 +14,14 @@ namespace MachiningCalculatorTests
         {
             // Arrange
             BaseRotatingTool tool = new BaseRotatingTool();
-            tool.cuttingSpeed = 200;
-            tool.toolDiameter = 50;
+            tool.CuttingSpeed = 200;
+            tool.ToolDiameter = 50;
 
             // Act
-            tool.CalculateRevolutionsPerMinute(tool.cuttingSpeed, tool.toolDiameter);
+            tool.CalculateRevolutionsPerMinute(tool.CuttingSpeed, tool.ToolDiameter);
 
             // Assert
-            Assert.Equal(1273, tool.revolutions);
+            Assert.Equal(1273, tool.Revolutions);
         }
 
         [Fact]
@@ -29,14 +29,14 @@ namespace MachiningCalculatorTests
         {
             // Arrange
             BaseRotatingTool tool = new BaseRotatingTool();
-            tool.cuttingSpeed = 200;
-            tool.toolDiameter = 20.5;
+            tool.CuttingSpeed = 200;
+            tool.ToolDiameter = 20.5;
 
             // Act
-            tool.CalculateRevolutionsPerMinute(tool.cuttingSpeed, tool.toolDiameter);
+            tool.CalculateRevolutionsPerMinute(tool.CuttingSpeed, tool.ToolDiameter);
 
             // Assert
-            Assert.Equal(3105, tool.revolutions);
+            Assert.Equal(3105, tool.Revolutions);
         }
     }
 }

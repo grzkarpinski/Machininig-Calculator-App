@@ -8,15 +8,13 @@ namespace MachininigCalculatorLibary
 {
     public class ToolDrilling: BaseRotatingTool
     {
-        //inputs
-        public double feedRatePerRevolution { get; set; }
+        public double FeedRatePerRevolution { get; set; }
 
-        //outputs
-        public int feedPerMinuteDrilling { get; set; }
+        public int FeedPerMinuteDrilling { get; set; }
 
         public void CalculateFeedPerMinuteDrilling(double feedRatePerRevolution, int revolutions)
         {
-            feedPerMinuteDrilling = (int)(feedRatePerRevolution * revolutions);
+            FeedPerMinuteDrilling = (int)(feedRatePerRevolution * revolutions);
         }
     }
 }

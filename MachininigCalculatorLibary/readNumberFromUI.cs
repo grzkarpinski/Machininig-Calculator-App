@@ -8,7 +8,7 @@ namespace MachininigCalculatorLibary
 {
     public class ReadNumberFromUI
     {
-        public static int readIntNumber(string input)
+        public static int ReadIntNumber(string input)
         {
             if (int.TryParse(input, out int intNumber))
             {
@@ -20,7 +20,7 @@ namespace MachininigCalculatorLibary
             }
         }
 
-        public static double readDoubleNumber(string input)
+        public static double ReadDoubleNumber(string input)
         {
             if (double.TryParse(input, out double doubleNumber))
             {
